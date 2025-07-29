@@ -1,0 +1,432 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+
+* {
+  outline-color: #1f2937;
+}
+
+
+/* Inline code styling */
+.ProseMirror:focus {
+  outline-color: #1f2937;
+  border-color: #1f2937;
+}
+
+.ProseMirror:active {
+  outline-color: #1f2937;
+}
+
+.ProseMirror code {
+  background-color: #f1f5f9;
+  border-radius: 0.25rem;
+  color: #e11d48;
+  font-family: "JetBrains Mono", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
+  font-size: 0.875em;
+  padding: 0.125rem 0.25rem;
+  border: 1px solid #e2e8f0;
+}
+
+/* Custom code block with filename header */
+.custom-code-block {
+  background: #2d3748;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.code-filename-header {
+  background: #4a5568;
+  color: #a0aec0;
+  
+  font-size: 0.875rem;
+  font-family: "JetBrains Mono", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
+  font-weight: 500;
+  border-bottom: 1px solid #2d3748;
+}
+
+.custom-code-block .code-content {
+  background: transparent !important;
+  color: #e2e8f0;
+  font-family: "JetBrains Mono", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding: 1rem;
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+.custom-code-block .code-content code {
+  background: none !important;
+  color: inherit;
+  padding: 0;
+  border: none;
+  font-size: inherit;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Heading anchor offset for sticky header */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  scroll-margin-top: 2rem;
+}
+
+/* Table of Contents styling */
+.toc-item {
+  transition: all 0.2s ease;
+}
+
+.toc-item:hover {
+  padding-left: 0.75rem;
+}
+
+.toc-item.active {
+  color: #ec4899;
+  font-weight: 500;
+  border-left: 2px solid #ec4899;
+  padding-left: 0.75rem;
+}
+
+/* Enhanced code block styling with syntax highlighting */
+.code-block-highlighted {
+  background: #2d3748 !important;
+  
+  
+  overflow: hidden;
+  position: relative;
+}
+
+.ProsesMirror-focused {
+  outline: none;
+}
+
+.ProseMirror .code-block-highlighted pre {
+  background: transparent !important;
+  color: #e2e8f0;
+  font-family: "JetBrains Mono", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding: 1rem;
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+.ProseMirror .code-block-highlighted pre code {
+  background: none !important;
+  color: inherit;
+  padding: 0;
+  border: none;
+}
+
+/* Syntax highlighting - VS Code Dark+ theme colors */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-section,
+.hljs-link {
+  color: #569cd6; /* Blue for keywords like export, const, function */
+}
+
+.hljs-string,
+.hljs-attr {
+  color: #ce9178; /* Orange/brown for strings */
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #6a9955; /* Green for comments */
+  font-style: italic;
+}
+
+.hljs-number {
+  color: #b5cea8; /* Light green for numbers */
+}
+
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+  color: #9cdcfe; /* Light blue for identifiers */
+}
+
+.hljs-built_in,
+.hljs-symbol,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #4ec9b0; /* Cyan for built-ins */
+}
+
+.hljs-type {
+  color: #4ec9b0; /* Cyan for types */
+}
+
+.hljs-class .hljs-title {
+  color: #4ec9b0; /* Cyan for class names */
+}
+
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.function_ {
+  color: #dcdcaa; /* Yellow for function names */
+}
+
+.hljs-property {
+  color: #9cdcfe; /* Light blue for properties */
+}
+
+.hljs-punctuation {
+  color: #d4d4d4; /* Light gray for punctuation */
+}
+
+.hljs-operator {
+  color: #d4d4d4; /* Light gray for operators */
+}
+
+.hljs-meta {
+  color: #569cd6; /* Blue for meta information */
+}
+
+.hljs-doctag {
+  color: #569cd6; /* Blue for doc tags */
+}
+
+.hljs-params {
+  color: #9cdcfe; /* Light blue for parameters */
+}
+
+/* Special highlighting for JavaScript/TypeScript */
+.hljs-attr {
+  color: #92c5f7; /* Light blue for object keys */
+}
+
+.hljs-value {
+  color: #ce9178; /* Orange for values */
+}
+
+/* Blog display styling */
+code {
+  background-color: #f1f5f9;
+  border-radius: 0.25rem;
+  color: #e11d48;
+  font-family: "JetBrains Mono", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
+  font-size: 0.875em;
+  padding: 0.125rem 0.25rem;
+  border: 1px solid #e2e8f0;
+}
+
+/* Code blocks in blog display */
+.prose .custom-code-block {
+  background: #2d3748;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.prose .code-filename-header {
+  background: #4a5568;
+  color: #a0aec0;
+
+  font-size: 0.875rem;
+  font-family: "JetBrains Mono", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
+  font-weight: 500;
+  border-bottom: 1px solid #2d3748;
+}
+
+.prose .code-filename-header p {
+
+padding: 10px ;
+
+}
+
+.prose .custom-code-block .code-content {
+  background: transparent;
+  color: #e2e8f0;
+  font-family: "JetBrains Mono", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 0;
+}
+
+.prose .custom-code-block .code-content code {
+  background: none;
+  color: inherit;
+  font-size: 0.875rem;
+  padding: 0;
+  border: none;
+}
+
+.prose pre {
+  background: #2d3748;
+  
+  color: #e2e8f0;
+  font-family: "JetBrains Mono", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
+  padding: 1rem;
+  overflow-x: auto;
+  
+}
+
+.prose pre code {
+  background: none;
+  color: inherit;
+  font-size: 0.875rem;
+  padding: 0;
+  border: none;
+}
+
+/* Ensure syntax highlighting works in blog display */
+.prose .hljs-keyword {
+  color: #569cd6;
+}
+.prose .hljs-string {
+  color: #ce9178;
+}
+.prose .hljs-comment {
+  color: #6a9955;
+  font-style: italic;
+}
+.prose .hljs-number {
+  color: #b5cea8;
+}
+.prose .hljs-name {
+  color: #9cdcfe;
+}
+.prose .hljs-built_in {
+  color: #4ec9b0;
+}
+.prose .hljs-type {
+  color: #4ec9b0;
+}
+.prose .hljs-title {
+  color: #dcdcaa;
+}
+.prose .hljs-property {
+  color: #9cdcfe;
+}
+.prose .hljs-attr {
+  color: #92c5f7;
+}
+.prose .hljs-punctuation {
+  color: #d4d4d4;
+}
+.prose .hljs-operator {
+  color: #d4d4d4;
+}
+
+/* Rich text editor heading styles */
+.ProseMirror h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 1.5rem 0 1rem 0;
+  color: #1f2937;
+}
+
+.ProseMirror h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 1.25rem 0 0.75rem 0;
+  color: #1f2937;
+}
+
+.ProseMirror h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 1rem 0 0.5rem 0;
+  color: #1f2937;
+}
+
+.ProseMirror h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0.75rem 0 0.5rem 0;
+  color: #1f2937;
+}
+
+.ProseMirror h5 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0.75rem 0 0.5rem 0;
+  color: #1f2937;
+}
+
+.ProseMirror h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0.75rem 0 0.5rem 0;
+  color: #1f2937;
+}
+
+
+/* Blog display heading styles */
+.prose h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 1.5rem 0 1rem 0;
+  color: #1f2937;
+}
+
+.prose h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 1.25rem 0 0.75rem 0;
+  color: #1f2937;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+.prose h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 1rem 0 0.5rem 0;
+  color: #1f2937;
+}
+
+.prose h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0.75rem 0 0.5rem 0;
+  color: #1f2937;
+}
+
+.prose h5 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0.75rem 0 0.5rem 0;
+  color: #1f2937;
+}
+
+.prose h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0.75rem 0 0.5rem 0;
+  color: #1f2937;
+}
+

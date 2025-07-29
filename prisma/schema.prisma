@@ -1,0 +1,63 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("users")
+}
+
+model Category {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  createdAt DateTime @default(now()) @map("created_at")
+  
+  blogs     Blog[]
+
+  @@map("categories")
+}
+
+model Tag {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  createdAt DateTime @default(now()) @map("created_at")
+  
+  blogs     BlogTag[]
+
+  @@map("tags")
+}
+
+model Blog {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String   @db.Text
+  categoryId  Int?     @map("category_id")
+  createdAt   DateTime @default(now()) @map("created_at")
+  
+  category    Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  tags        BlogTag[]
+
+  @@map("blogs")
+}
+
+model BlogTag {
+  id     Int @id @default(autoincrement())
+  blogId Int @map("blog_id")
+  tagId  Int @map("tag_id")
+  
+  blog   Blog @relation(fields: [blogId], references: [id], onDelete: Cascade)
+  tag    Tag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@unique([blogId, tagId])
+  @@map("blogs_tags")
+}
