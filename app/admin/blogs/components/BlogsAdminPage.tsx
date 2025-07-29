@@ -100,7 +100,7 @@ export default function BlogsAdminPage() {
 
       <Card>
         <CardHeader>
-          <CardTitle>All Blogs</CardTitle>
+          <CardTitle>All Blog</CardTitle>
         </CardHeader>
         <CardContent>
           <Table>
